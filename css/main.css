@@ -11,7 +11,7 @@
    ========================================================================== */
 
 html {
-    color: #222;
+    color: black;
     font-size: 1em;
     line-height: 1.4;
 }
@@ -97,18 +97,19 @@ textarea {
 
 
 html {
-  background-color: #222;
+  background-color: violet;
   height: 100%;
   width: 100%;
 }
 
 body {
-  font-family: 'Source Sans Pro', sans-serif;
-  padding: 2em;
+  font-family: 'Josefin Sans', sans-serif;
+  padding: 0em 2em;
   font-size: 1em;
   font-weight: 700;
-  height: 100%;
-  color: #fff;
+  color: brown;
+  display: flex;
+  justify-content: center;
 }
 
 .wrapper {
@@ -116,20 +117,47 @@ body {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
-  align-items: center;
+  max-width: 1200px;
 }
+
+.wrapper span {
+    text-transform: uppercase;
+    font-family: 'Julee', cursive;
+}
+
+header, footer {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+header h1 {
+    font-size: 4em;
+}
+
+main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 1.5em;
+    border-bottom: 1px solid purple;
+}
+
 
 .div-1, .div-2, .div-3 {
   /*give the divs a width of 30%, add display:flex, set justify-content and align-items to center*/
-  color: #fff;
-  line-height: 1.5em;
-  font-size: 1.5em;
+  line-height: 1.2em;
+  font-size: 1.2em;
   display: flex;
-  /*width: 30%;*/
-  height: auto;
   justify-content: center;
   align-items: center;
-}
+  border-bottom: 1px solid purple;
+ }
+
+ footer {
+    border-top: 1px solid purple;
+    padding-top: 30px;
+ }
 
 
 
@@ -215,14 +243,24 @@ body {
    Modify as content requires.
    ========================================================================== */
 
-@media all and (min-width: 1200px) {
+@media all and (max-width: 768px) {
+    body {
+        padding: 1em;
+    }
+}
+
+
+
+@media (min-width: 1200px) {
     .div-1, .div-2, .div-3 {
         flex-basis: 30%;
+        border-bottom: none;
       }
 
-    .div-1, .div-2 {
-        border-right: 1px solid grey;
-        padding-right: 30px;
+    .div-2 p {
+        border-left: 1px solid purple;
+        border-right: 1px solid purple;
+        padding: 0 30px;
     }
 }
 
